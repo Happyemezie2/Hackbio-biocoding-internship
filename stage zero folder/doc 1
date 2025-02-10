@@ -1,1 +1,11 @@
-1+1
+my.team <- data.frame(
+Name = c ("Mikayla Sheild", "Valentim", "Josiah", "Happiness", "Rashid"),
+Slack.UN = c("Mikayla", "José Valentim", "Josiah", "Happiness Ezinna", "Rashid"),
+email = c("msheild.1218@gmail.com", "jose.valentimfilhoUK@gmail.com", "EMAIL HERE", "EMAIL HERE", "EMAIL HERE"),
+Country = c("The US", "Brazil", "Nigeria", "Nigeria", "Nigeria"),
+Discipline = c("Genetics & Genomics", "Electronic Engineering", "Biochemistry", "Molecular Parisitology & Computational Bioinformatics", "Molecular biology"),
+Hobbies = c("Reading & writing", "singing", "cycling", "Reading & Singing", "drawing"),
+LanguagePref = c( "R", "Python", "Python", "Python", "R")
+)
+#printing my.team info
+print(my.team)
