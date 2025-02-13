@@ -6,7 +6,7 @@ Country = c("The US", "Brazil", "Nigeria", "Nigeria", "Nigeria"),
 Discipline = c("Genetics & Genomics", "Electronic Engineering", "Biochemistry", "Molecular Parisitology & Computational Bioinformatics", "Molecular biology"),
 Hobbies = c("Reading & writing", "singing", "cycling", "Reading & Singing", "drawing"),
 LanguagePref = c( "R", "Python", "Python", "Python", "R")
-Github.account = c(" https://github.com/kittyjamster/MS.Feb.2025.HB.Internship.Codes/tree/stage-zero/stage_0_folder", "https://github.com/Josiah2000/hackbio"
+Github.account = c(" https://github.com/kittyjamster/MS.Feb.2025.HB.Internship.Codes/tree/stage-zero/stage_0_folder", "https://github.com/Josiah2000/hackbio", "...", "..."),
 )
 #printing my.team info
 print(my.team)
