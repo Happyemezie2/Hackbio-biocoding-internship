@@ -1,0 +1,5 @@
+## data structures task solutions
+DNA.seq <- c("A", "T", "G", "C", "A", "T", "G", "A")
+nucleotide_frequency <- table(DNA.seq)
+print(nucleotide_frequency)
+
