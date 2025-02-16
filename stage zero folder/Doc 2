@@ -20,9 +20,26 @@ DNA.seq <- c("A", "T", "G", "C", "A", "G")
 N.frequency <- table(DNA.seq) 
 print(N.frequency)
 
-##
+##vector creation
 plant_height <- sample(1:50, 7, replace = TRUE)
 print("Plant Heights:")
 print(plant_height)  
 which.max(N.frequency)
+
+#matrix
+expression_matrix <- matrix(c(2.1, 3.2, 4.5,
+                              1.5,  2.8, 3.4), 
+                              nrow = 2, ncol = 3)
+print(expression_matrix) 
+
+#labelled matrix
+rownames(expression_matrix) <- c("Gene1", "Gene2")
+colnames(expression_matrix) <- c("Sample1", "Sample2", "Sample3")
+
+print(expression_matrix)
+print(expression_matrix$Sample1) #print column name
+#take note of the commas when calling columns and rows
+print(expression_matrix[,'Sample1'] #print column name
+print(expression_matrix['Gene1',] #Print row nam
+#
 
