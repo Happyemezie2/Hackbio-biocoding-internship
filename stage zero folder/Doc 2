@@ -15,3 +15,14 @@ Terminal Output
 [1,]  2.1  4.5  2.8
 [2,]  3.2  1.5  3.9
 
+#NN
+DNA.seq <- c("A", "T", "G", "C", "A", "G")
+N.frequency <- table(DNA.seq) 
+print(N.frequency)
+
+##
+plant_height <- sample(1:50, 7, replace = TRUE)
+print("Plant Heights:")
+print(plant_height)  
+which.max(N.frequency)
+
