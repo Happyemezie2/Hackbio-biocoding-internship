@@ -1,0 +1,71 @@
+
+
+codon_db <- c("UUU"="Phe", "UUC"="Phe","UUA"="Leu", "UUC"="Leu", "AUU"="Ile", "GGG"="Arg")
+
+test_cd <- "UUAUUAUUAAUUAUUUUUUUUUUUUUUUUUGGGUUCUUCGGG"
+
+translator <- function(inputCodon){
+  
+  split_seq <- strsplit(inputCodon, "")[[1]]
+  #print(split_seq)
+  codon_positions <- seq(1, length(split_seq), 3)
+  
+  ribosome_output <- c()
+  
+  for(i in codon_positions){
+    curr_nuc <- split_seq[i:(i+2)]
+    curr_nuc <- paste0(curr_nuc[1], curr_nuc[2], curr_nuc[3])
+    #print(curr_nuc)
+    ribosome_output <- c(ribosome_output, codon_db[curr_nuc])
+  }
+  
+  return(ribosome_output)
+}
+
+translator(test_cd)
+
+#start coding... 
+
+population_maker <- function(k = 2, x_mid = 5, x){
+  
+  solution <- 1/(1 + exp(-k*(x - x_mid)))
+  
+  return(solution) 
+}
+
+od_600 <- c()
+
+for(i in 0:24){
+  curr_od <- population_maker(k =0.55, x_mid = 7, x = i)
+  od_600 <- c(od_600, curr_od)
+}
+
+#print(length(od_600))
+#print(length(0:24))
+
+plot(x = 0:24, y = od_600) 
+
+# code to generate 100 different growth curves
+
+num_curves <- 100
+time_points <- seq(0, 100, length.out = 100)
+
+growth_data <- data.frame(Time = time_points)
+
+for (i in 1:num_curves) {
+  K <- runif(1, 1000, 5000)
+  r <- runif(1, 0.1, 0.5)
+  lag_phase <- sample(5:15, 1)
+  exp_phase <- sample(10:30, 1)
+  curve_name <- paste0("Curve", i)
+  growth_data[[curve_name]] <- sapply(time_points, population_maker, K = K, r = r, lag_phase_length = lag_phase, exp_phase_length = exp_phase)
+} 
+#time to80%
+time_to_80_percent <- function(curve_data) {
+  max_pop <- max(curve_data[, -1])
+  target_pop <- 0.8 * max_pop
+  time_index <- which.min(abs(curve_data[, -1] - target_pop))
+  return(curve_data$Time[time_index])
+}
+print(time_to_80_percent)
+
